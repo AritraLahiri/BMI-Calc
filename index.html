@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link href="https://fonts.googleapis.com/css?family=Concert+One|Montserrat&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
+<style type="text/css">
+	*{
+padding: 0px;margin: 0px;
+font-family: 'Concert One', cursive;
+	}
+body{
+	background-color:rgb(178, 57, 131);
+}
+#heading{
+font-size: 45px;
+letter-spacing: 2px;
+animation: anim 5s infinite;
+}
+@keyframes anim{
+	0%{color:black;transform: scale(1.5);}
+	25%{color:#FF0;transform: scale(0.8);}
+	50%{color:orange;transform: scale(1.5);}
+	75%{color:#8000FF;transform: scale(0.8);}
+	100%{color:black;transform: scale(1.5);}
+}
+
+</style>
+</head>
+<body>
+<h1 class="text-center text-capitalize  py-5 font-weight-bold" id="heading">BMI calculator</h1>
+<div class="container w-50">
+<div class="card border-warning" style="border-radius: 28px; box-shadow: 5px 12px 19px #888888;"  >
+  <div class="card-header text-uppercase text-center bg-primary text-white display-4 font-weight-bold" style="border-radius: 28px 28px 5px 5px;"   >bmi</div>
+  <div class="card-body bg-dark">
+   <form action="#">
+  <div class="form-group">
+    <label for="email" class="text-capitalize text-danger" >weight:</label>
+    <input type="text" class="form-control text-success" id="weight" ><div><span id="wei" style="color:white"></span></div>
+  </div>
+  <div class="form-group">
+    <label for="pwd" class="text-capitalize text-danger">height:</label>
+    <input type="text" class="form-control text-success" id="height"><div><span id="hei" style="color:white"></span></div>
+  </div>
+  <div class="form-group">
+    <label for="pwd" class="text-capitalize text-danger">BMI value:</label>
+    <input type="text" class="form-control text-success" id="bmi">
+  </div>
+  <button type="submit" class="btn btn-outline-success" onclick="Bmi()">Submit</button>
+</form> 
+</div>
+  <div class="card-footer font-weight-bold text-center text-capitalize bg-primary text-white" style="font-family: 'Montserrat', sans-serif;border-radius: 5px 5px 28px 28px; ">a healthy BMI ranges between 19-25</div>
+</div>
+</div>
+
+<script type="text/javascript">
+	function Bmi() {
+var w=document.getElementById('weight').value;
+	 var h=document.getElementById('height').value;
+if(w==""){
+document.getElementById('wei').innerHTML='Please a value in kg';
+}
+else
+document.getElementById('wei').innerHTML='';
+ if(h=="")
+{
+document.getElementById('hei').innerHTML='Please enter your Height ';
+}
+else{
+
+    var h=h*12;
+     var h=h*0.025;
+var newvalue=w/(h*h);
+var newvalue=Math.round(newvalue);
+	document.getElementById('bmi').value=newvalue;
+document.getElementById('hei').innerHTML='';
+	}		
+	}
+
+</script>
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+</body>
+</html>
